@@ -7,7 +7,9 @@ import "./TestToken.sol";
 
 contract TestTokenCrowdsale is MintedCrowdsale {
 
-  function TestTokenCrowdsale(uint256 _rate, address _wallet, MintableToken _token) public
+  ERC20 _token = new TestToken();
+  
+  function TestTokenCrowdsale(uint256 _rate, address _wallet) public
     Crowdsale(_rate, _wallet, _token) {
   }
 
